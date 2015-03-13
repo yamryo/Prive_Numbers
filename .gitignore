@@ -1,0 +1,6 @@
+/vendor/bundle
+/test/OLD
+/src/TODO
+/tmp
+Gemfile.lock
+.DS_Store
