@@ -1,37 +1,31 @@
 #
 # Primes.rb
 # 
-# Time-stamp: <2015-03-13 13:44:49 (ryosuke)>
+# Time-stamp: <2015-03-13 14:57:36 (ryosuke)>
+
+require('prime')
 
 #-----------------------------
-class NaturalNumber < Integer
-  def initialize
-    super
-    self*(-1) if self < 0
+class NaturalNumber
+  
+  def initialize(num=1)
+    @value = (num.class == Fixnum) ? num : 0
+    @value *=(-1) if @value < 0
   end
+  attr_accessor :value
   
   def prime?
-    k = 1
-    while k*k < self do
-      
-    end
+    @value.prime?
   end
 end
 
 class PrimeCounter
   def initialize
-    @num = 1
+    @value = 1
     @count = 0
   end
-
-  def set_num num
-    @num = num
-  end
-
-  def get_count(num)
-    set_num(num)
-  end
-
+  attr_accessor :num, :count
+  
 end
 #--- end of PrimeCounter class ---
 
